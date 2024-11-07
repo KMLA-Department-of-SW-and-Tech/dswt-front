@@ -1,3 +1,3 @@
 export default function About() {
-  return <div>Fork test</div>
+  return <div>About</div>
 }
