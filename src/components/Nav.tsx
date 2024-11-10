@@ -1,15 +1,17 @@
+import { Link } from "react-router-dom"
+
 export default function Nav() {
   return (
     <nav className="navbar">
       <ul>
         <li>
-          <a href="src\routes\Home.tsx">Home</a>
+          <Link to="/">Home</Link>
         </li>
         <li>
-          <a href="src\routes\About.tsx">About</a>
+          <Link to="/about">About</Link>
         </li>
         <li>
-          <a href="src\routes\People.tsx">People</a>
+          <Link to="/people">People</Link>
         </li>
       </ul>
     </nav>
