@@ -1,9 +1,8 @@
-import Nav from "../components/Nav.tsx"
+// import Nav from "../components/Nav.tsx"
 
 export default function People() {
   return (
     <div>
-      <Nav />
       <h1>People</h1>
       <h2>29th Wavers</h2>
       <div>

@@ -65,19 +65,7 @@
   border-bottom: 1px solid #ccc; /*구분선 */
 }
 
-/* 각 섹션의 배경색 구분 */
-#home {
-  background-color: #fef3bd;
-}
-
-#about {
-  background-color: #d4f4fa;
-}
-
-#people {
-  background-color: #fde2e4;
-}
-
-#projects {
-  background-color: #cce3de;
+#contacts {
+  display: flex;
+  justify-content: flex-end;
 }

@@ -1,21 +1,24 @@
 import "./Nav.css"
-import { Link } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
 
 export default function Nav() {
   return (
     <nav className="navbar">
       <ul>
         <li>
-          <Link to="/">Home</Link>
+          <Link to="/#home">HOME</Link>
         </li>
         <li>
-          <Link to="/About">About</Link>
+          <Link to="/#about">ABOUT US</Link>
         </li>
         <li>
-          <Link to="/People">People</Link>
+          <Link to="/#what-we-do">WHAT WE DO</Link>
         </li>
         <li>
-          <Link to="/Projects">Projects</Link>
+          <NavLink to="/#projects">PROJECTS</NavLink>
+        </li>
+        <li>
+          <Link to="/#contacts">CONTACT</Link>
         </li>
       </ul>
     </nav>
