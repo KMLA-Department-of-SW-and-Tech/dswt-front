@@ -13,6 +13,9 @@ export default function Nav() {
         <li>
           <Link to="/people">People</Link>
         </li>
+        <li>
+          <Link to="/projects">Projects</Link>
+        </li>
       </ul>
     </nav>
   )

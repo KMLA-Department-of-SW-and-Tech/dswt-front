@@ -5,12 +5,8 @@ export default function Login() {
   return (
     <div>
       <Nav />
-
+      <h1>Log in</h1>
       <div className="container">
-        <div className="header">
-          <div className="text">Log in</div>
-          <div className="underline"></div>
-        </div>
         <div className="inputs">
           <div className="input">
             <input type="email" placeholder="email" />
