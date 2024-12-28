@@ -1,5 +1,6 @@
 import Nav from "../components/Nav.tsx"
 import Footer from "../components/Footer.tsx"
+import "./Login.css"
 
 export default function Login() {
   return (
