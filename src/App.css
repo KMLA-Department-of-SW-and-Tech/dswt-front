@@ -42,3 +42,41 @@
   color: #888;
 }
 */
+
+/* App.css */
+
+/* 전체 스크롤 컨테이너 스타일 */
+.scroll-container {
+  height: 100vh; /* 뷰포트 전체 높이 */
+  overflow-y: scroll; /* 세로 스크롤 허용 */
+  scroll-snap-type: y mandatory; /* 스크롤 스냅 활성화 */
+}
+
+/* 각 섹션 스타일 */
+.section {
+  height: 100vh; /* 각 섹션이 뷰포트 전체를 차지 */
+  scroll-snap-align: start; /* 스냅 정렬 시작점 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  background-color: #f4f4f4; /* 기본 배경색 */
+  border-bottom: 1px solid #ccc; /* 구분선 */
+}
+
+/* 각 섹션의 배경색 구분 */
+#home {
+  background-color: #fef3bd;
+}
+
+#about {
+  background-color: #d4f4fa;
+}
+
+#people {
+  background-color: #fde2e4;
+}
+
+#projects {
+  background-color: #cce3de;
+}
