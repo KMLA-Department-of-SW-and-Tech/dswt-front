@@ -1,5 +1,5 @@
 import Nav from "../components/Nav.tsx"
-import Footer from "./Contacts.tsx"
+import Contacts from "./Contacts.tsx"
 import "./Login.css"
 
 export default function Login() {
@@ -19,7 +19,7 @@ export default function Login() {
         <div className="administrator">Administrator Only</div>
       </div>
 
-      <Footer />
+      <Contacts />
     </div>
   )
 }
