@@ -3,7 +3,9 @@ import {
   redirect,
   RouterProvider,
   useNavigate,
+  useLocation,
 } from "react-router-dom"
+import { useEffect, useRef } from "react"
 import Home from "./pages/Home"
 import About from "./pages/About"
 import Login from "./pages/Login"
@@ -24,20 +26,42 @@ function ProjectLoader() {
 }*/
 
 const ScrollablePages = () => {
-  const sections = ["", "about", "people", "projects", "contact"]
+  const sections = ["", "about", "people", "projects", "contacts"]
   const navigate = useNavigate()
+  const location = useLocation()
+  const isScrolling = useRef(false)
+
+  useEffect(() => {
+    const hash = location.hash.replace("#", "")
+    const sectionIndex = sections.indexOf(hash)
+    if (sectionIndex !== -1) {
+      const targetPosition = sectionIndex * window.innerHeight
+      document
+        .querySelector(".scroll-container")
+        ?.scrollTo({ top: targetPosition, behavior: "smooth" })
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   interface ScrollEvent extends React.UIEvent<HTMLDivElement> {
     target: HTMLDivElement & EventTarget
   }
 
   const handleScroll = (e: ScrollEvent) => {
+    if (isScrolling.current) return
+
     const currentScroll = e.target.scrollTop
     const height = window.innerHeight
 
     const pageIndex = Math.round(currentScroll / height)
     if (pageIndex >= 0 && pageIndex < sections.length) {
+      isScrolling.current = true
       navigate(`#${sections[pageIndex]}`)
+
+      // Allow scroll lock to release after animation completes
+      setTimeout(() => {
+        isScrolling.current = false
+      }, 500) // Adjust this timeout to match scroll animation duration
     }
   }
 
@@ -55,7 +79,7 @@ const ScrollablePages = () => {
       <div className="section" id="projects">
         <Projects />
       </div>
-      <div className="section" id="contact">
+      <div className="section" id="contacts">
         <Contacts />
       </div>
     </div>
